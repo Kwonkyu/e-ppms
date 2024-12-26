@@ -3,5 +3,5 @@ plugins {
 }
 rootProject.name = "pms"
 include("application")
-include("persistence-rdb")
-include("persistence-redis")
+include("persistence:rdb")
+include("persistence:redis")
