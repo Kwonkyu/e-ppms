@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: pms
+  banner:
+    location: classpath:banner.txt
