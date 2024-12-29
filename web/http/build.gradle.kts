@@ -26,8 +26,7 @@ dependencies {
     implementation("org.springframework.session:spring-session-jdbc")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.springframework.session:spring-session-core")
-    implementation(project(":persistence:rdb"))
-    implementation(project(":persistence:redis"))
+    implementation(project(":usecase:inbound"))
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
