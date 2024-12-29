@@ -1,5 +1,5 @@
 plugins {
-    kotlin("jvm") version "1.9.25"
+    kotlin("jvm")
 }
 
 group = "partners"
@@ -10,7 +10,7 @@ repositories {
 }
 
 dependencies {
-    implementation(project(":domain:product"))
+    implementation(project(":domain:domain-product"))
     testImplementation(kotlin("test"))
 }
 

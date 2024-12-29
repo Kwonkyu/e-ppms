@@ -18,6 +18,7 @@ dependencies {
     implementation(project(":web:http"))
     implementation(project(":persistence:rdb"))
     implementation(project(":persistence:redis"))
+    implementation(project(":application:application-product"))
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     developmentOnly("org.springframework.boot:spring-boot-docker-compose")
     runtimeOnly("io.micrometer:micrometer-registry-prometheus")
