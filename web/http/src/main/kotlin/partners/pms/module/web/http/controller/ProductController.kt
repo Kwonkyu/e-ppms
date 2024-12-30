@@ -38,7 +38,7 @@ class ProductController(
     ): ResponseEntity<String> =
         createProductPort
             .createProduct(ProductCreateRequest(request.name, request.price))
-            .let { ResponseEntity.created(URI.create("/$it")).build() }
+            .let { ResponseEntity.created(URI.create("/${it.code}")).build() }
 
     @PatchMapping("/{code}")
     fun updateProduct(
