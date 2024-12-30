@@ -10,7 +10,7 @@ repositories {
 }
 
 dependencies {
-    implementation(project(":domain:domain-product"))
+    implementation(project(":application:domain:product-domain"))
     testImplementation(kotlin("test"))
 }
 

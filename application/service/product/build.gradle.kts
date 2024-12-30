@@ -13,7 +13,7 @@ repositories {
 }
 
 dependencies {
-    implementation(project(":domain:domain-product"))
+    implementation(project(":application:domain:product-domain"))
     implementation(project(":usecase:inbound"))
     implementation(project(":usecase:outbound"))
     implementation("org.springframework.boot:spring-boot-starter")
