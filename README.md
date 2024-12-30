@@ -6,6 +6,9 @@ product management system
 - [2.x에서 3.x로](https://www.youtube.com/watch?v=HrRQExD3xow)
 - [AOT, GraalVM](https://www.youtube.com/watch?v=TS4DpYSmfXk)
 
+## 구조
+- [구조](https://github.com/Kwonkyu/pms-core/wiki/%EA%B5%AC%EC%A1%B0)
+
 ## 해보고 싶은 것
 - 포트, 어댑터 기반의 육각형 아키텍처(Hexagonal Architecture) 적용
 - 도메인 주도 설계(DDD) 기반 풍부한 도메인 모델 디자인
