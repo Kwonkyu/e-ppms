@@ -5,6 +5,16 @@ import org.springframework.stereotype.Repository
 import partners.pms.module.persistence.rdb.entity.Product
 
 @Repository
-interface ProductRepository : JpaRepository<Product, Long> {
-    fun findByCode(code: String): Product?
+interface ProductRepository :
+    JpaRepository<Product, Long>,
+    ProductQueryDslRepository {
+    fun existsByCode(code: String): Boolean
+}
+
+interface ProductQueryDslRepository {
+    fun findProductBy(
+        id: Long?,
+        code: String?,
+        name: String?,
+    ): Product?
 }

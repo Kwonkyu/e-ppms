@@ -22,14 +22,15 @@ repositories {
 
 dependencies {
     implementation(project(":usecase:outbound"))
+    implementation(project(":application:domain:product-domain"))
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-jdbc")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.liquibase:liquibase-core")
     implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.4")
     // https://mvnrepository.com/artifact/com.querydsl/querydsl-jpa
-    implementation("com.querydsl:querydsl-jpa:5.0.0")
-    annotationProcessor("com.querydsl:querydsl-apt:5.0.0")
+    implementation("com.querydsl:querydsl-jpa:5.0.0:jakarta")
+    kapt("com.querydsl:querydsl-apt:5.0.0:jakarta")
     runtimeOnly("org.postgresql:postgresql")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
