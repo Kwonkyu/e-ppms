@@ -23,6 +23,7 @@ repositories {
 dependencies {
     implementation(project(":usecase:outbound"))
     implementation(project(":application:domain:product-domain"))
+    implementation(project(":application:domain:account-domain"))
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-jdbc")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
