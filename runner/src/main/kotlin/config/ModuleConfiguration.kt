@@ -1,4 +1,4 @@
-package partners.pms.core.config
+package partners.pms.config
 
 import org.springframework.context.annotation.ComponentScan
 import org.springframework.context.annotation.Configuration
