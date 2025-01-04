@@ -14,7 +14,8 @@ class AccountDetails(
     val isExpired: Boolean,
 ) : UserDetails {
     override fun getAuthorities(): MutableCollection<out GrantedAuthority> {
-        TODO("Not yet implemented")
+        // TODO
+        return mutableListOf()
     }
 
     override fun getPassword(): String = password
