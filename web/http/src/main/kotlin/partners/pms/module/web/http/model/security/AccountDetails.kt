@@ -9,14 +9,11 @@ class AccountDetails(
     val name: String,
     val type: String,
     val status: String,
-    val role: String,
     val email: String,
     val isExpired: Boolean,
+    val authorities: MutableSet<out GrantedAuthority>,
 ) : UserDetails {
-    override fun getAuthorities(): MutableCollection<out GrantedAuthority> {
-        // TODO
-        return mutableListOf()
-    }
+    override fun getAuthorities(): MutableCollection<out GrantedAuthority> = authorities
 
     override fun getPassword(): String = password
 
