@@ -12,7 +12,7 @@ class AccountFactory {
                 name = account.name,
                 type = account.type,
                 status = account.status,
-                role = account.role,
+                roles = account.roles,
                 email = account.email,
                 isExpired = account.isExpired,
             )
