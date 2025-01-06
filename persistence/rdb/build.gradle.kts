@@ -21,6 +21,7 @@ repositories {
 }
 
 dependencies {
+    implementation(project(":common"))
     implementation(project(":usecase:outbound"))
     implementation(project(":application:domain:product-domain"))
     implementation(project(":application:domain:account-domain"))
