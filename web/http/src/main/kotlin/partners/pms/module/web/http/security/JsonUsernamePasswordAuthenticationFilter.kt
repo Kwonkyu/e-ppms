@@ -8,6 +8,7 @@ import org.springframework.security.authentication.AuthenticationManager
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
 import org.springframework.security.core.Authentication
 import org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter
+import org.springframework.security.web.context.HttpSessionSecurityContextRepository
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher
 import partners.pms.module.web.http.model.security.AuthRequest
 
@@ -19,6 +20,7 @@ class JsonUsernamePasswordAuthenticationFilter(
     ) {
     init {
         setAuthenticationSuccessHandler(JsonLoginSuccessHandler())
+        setSecurityContextRepository(HttpSessionSecurityContextRepository())
     }
 
     override fun attemptAuthentication(

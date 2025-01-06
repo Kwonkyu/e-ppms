@@ -23,7 +23,7 @@ class LoadAccountService(
                     status = it.status,
                     email = "E_MAIL@PPMS.COM",
                     isExpired = false,
-                    authorities = it.roles.mapTo(mutableSetOf()) { role -> SimpleGrantedAuthority(role.name) },
+                    authorities = it.roles.mapTo(mutableSetOf()) { role -> SimpleGrantedAuthority("ROLE_$role") },
                 )
                 // 절대로 null 을 반환하지 않도록 인터페이스에 정의되어 있음
             } ?: throw UsernameNotFoundException("Username is null")

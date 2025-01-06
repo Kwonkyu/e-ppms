@@ -23,7 +23,6 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.springframework.session:spring-session-data-redis")
-    implementation("org.springframework.session:spring-session-jdbc")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.springframework.session:spring-session-core")
     implementation(project(":usecase:inbound"))

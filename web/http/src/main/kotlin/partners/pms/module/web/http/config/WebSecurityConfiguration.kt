@@ -1,8 +1,11 @@
 package partners.pms.module.web.http.config
 
+import enum.AccountRole
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.http.HttpStatus
+import org.springframework.security.access.hierarchicalroles.RoleHierarchy
+import org.springframework.security.access.hierarchicalroles.RoleHierarchyImpl
 import org.springframework.security.authentication.AuthenticationManager
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
@@ -21,6 +24,16 @@ import partners.pms.module.web.http.security.LoadAccountService
 @EnableWebSecurity
 class WebSecurityConfiguration {
     @Bean
+    fun accountRoleHierarchy(): RoleHierarchy =
+        RoleHierarchyImpl
+            .withDefaultRolePrefix()
+            .role(AccountRole.ADMIN.name)
+            .implies(AccountRole.USER.name)
+            .role(AccountRole.USER.name)
+            .implies(AccountRole.GUEST.name)
+            .build()
+
+    @Bean
     fun securityFilterChain(
         http: HttpSecurity,
         authenticationManager: AuthenticationManager,
@@ -29,8 +42,8 @@ class WebSecurityConfiguration {
             .csrf { it.disable() }
             .authorizeHttpRequests {
                 it.requestMatchers("/actuator/**").permitAll()
+                it.requestMatchers("/product/**").hasAnyRole(AccountRole.USER.name)
                 it.anyRequest().authenticated()
-                // it.requestMatchers("/product/**").access( /** auth manager here? */)
             }.logout {
                 it.permitAll()
                 it.logoutSuccessHandler(HttpStatusReturningLogoutSuccessHandler(HttpStatus.OK))
