@@ -8,4 +8,9 @@ spring:
   banner:
     location: classpath:banner.txt
   jpa:
-    generate-ddl: true
+    generate-ddl: true # DEVELOPMENT ONLY
+  quartz:
+    jdbc:
+      initialize-schema: always # DEVELOPMENT ONLY
+    job-store-type: jdbc
+    wait-for-jobs-to-complete-on-shutdown: true

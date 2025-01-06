@@ -15,6 +15,7 @@ findProject(":application:domain:account")?.name = "account-domain"
 include("application:service:account")
 findProject(":application:service:account")?.name = "account-service"
 
+include(":application:scheduling")
 include("persistence:rdb")
 include("persistence:redis")
 include("web:http")

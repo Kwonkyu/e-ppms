@@ -22,6 +22,7 @@ dependencies {
     implementation(project(":application:domain:account-domain"))
     implementation(project(":application:service:product-service"))
     implementation(project(":application:service:account-service"))
+    implementation(project(":application:scheduling"))
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     developmentOnly("org.springframework.boot:spring-boot-docker-compose")
     runtimeOnly("io.micrometer:micrometer-registry-prometheus")
