@@ -12,7 +12,7 @@ class AccountFactory {
                 password = accountEntity.password,
                 email = accountEntity.email,
                 name = accountEntity.name,
-                role = accountEntity.role,
+                roles = accountEntity.authorities.mapTo(mutableSetOf()) { it.id.role },
                 validFrom = ZonedDateTime.now(), // accountEntity.validFrom,
                 validUntil = ZonedDateTime.now(), // accountEntity.validUntil,
                 type = "ACCOUNT_TYPE", // accountEntity.type,
