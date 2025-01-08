@@ -10,11 +10,11 @@ class AccountFactory {
                 username = account.username,
                 password = account.password,
                 name = account.name,
-                type = account.type,
-                status = account.status,
-                roles = account.roles,
                 email = account.email,
+                phone = account.phone,
+                status = account.status,
                 isExpired = account.isExpired,
+                roles = account.roles,
             )
     }
 }

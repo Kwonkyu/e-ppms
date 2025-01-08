@@ -10,13 +10,13 @@ class AccountFactory {
             Account(
                 username = accountEntity.username,
                 password = accountEntity.password,
-                email = accountEntity.email,
                 name = accountEntity.name,
-                roles = accountEntity.authorities.mapTo(mutableSetOf()) { it.id.role },
+                email = accountEntity.email,
+                phone = accountEntity.phone,
+                status = accountEntity.status,
                 validFrom = ZonedDateTime.now(), // accountEntity.validFrom,
                 validUntil = ZonedDateTime.now(), // accountEntity.validUntil,
-                type = "ACCOUNT_TYPE", // accountEntity.type,
-                status = "ACCOUNT_STATUS", // accountEntity.status
+                roles = accountEntity.authorities.mapTo(mutableSetOf()) { it.id.role },
             )
     }
 }

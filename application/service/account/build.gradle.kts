@@ -16,6 +16,7 @@ dependencies {
     implementation(project(":application:domain:account-domain"))
     implementation(project(":usecase:inbound"))
     implementation(project(":usecase:outbound"))
+    implementation(project(":common"))
     implementation("org.springframework.boot:spring-boot-starter")
     implementation("org.springframework:spring-tx")
     testImplementation(kotlin("test"))

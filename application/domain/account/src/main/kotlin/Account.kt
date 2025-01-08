@@ -1,18 +1,19 @@
 package partners.pms.application.domain.account
 
 import enum.AccountRole
+import enum.AccountStatus
 import java.time.ZonedDateTime
 
 class Account(
     val username: String,
-    val password: String,
-    val name: String,
-    val type: String,
-    val status: String,
-    val email: String,
-    val validFrom: ZonedDateTime,
-    val validUntil: ZonedDateTime,
-    val roles: Set<AccountRole>,
+    var password: String,
+    var name: String,
+    var email: String,
+    var phone: String,
+    var status: AccountStatus,
+    var validFrom: ZonedDateTime,
+    var validUntil: ZonedDateTime,
+    val roles: MutableSet<AccountRole>,
 ) {
     val isExpired: Boolean
         get() = ZonedDateTime.now().isAfter(validUntil) || ZonedDateTime.now().isBefore(validFrom)
