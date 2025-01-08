@@ -19,10 +19,10 @@ class LoadAccountService(
                     username = it.username,
                     password = it.password,
                     name = it.name,
-                    type = it.type,
+                    email = it.email,
+                    phone = it.phone,
                     status = it.status,
-                    email = "E_MAIL@PPMS.COM",
-                    isExpired = false,
+                    isExpired = it.isExpired,
                     authorities = it.roles.mapTo(mutableSetOf()) { role -> SimpleGrantedAuthority("ROLE_$role") },
                 )
                 // 절대로 null 을 반환하지 않도록 인터페이스에 정의되어 있음

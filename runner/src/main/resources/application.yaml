@@ -9,6 +9,8 @@ spring:
     location: classpath:banner.txt
   jpa:
     generate-ddl: true # DEVELOPMENT ONLY
+    hibernate:
+      ddl-auto: create # DEVELOPMENT ONLY
   quartz:
     jdbc:
       initialize-schema: always # DEVELOPMENT ONLY
