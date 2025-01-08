@@ -15,4 +15,4 @@ class Product(
     var name: String,
     @Column(name = "price")
     var price: Double,
-)
+) : Auditable()

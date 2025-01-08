@@ -21,4 +21,4 @@ class Account(
     var status: String,
     @OneToMany(mappedBy = "id.account", orphanRemoval = true, fetch = FetchType.LAZY)
     var authorities: MutableSet<AccountAuthority>,
-)
+) : Auditable()
