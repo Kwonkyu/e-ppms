@@ -1,7 +1,7 @@
 package partners.pms.application.domain.account
 
-import enum.AccountRole
-import enum.AccountStatus
+import partners.pms.common.partners.pms.common.enum.AccountRole
+import partners.pms.common.partners.pms.common.enum.AccountStatus
 import java.time.ZonedDateTime
 
 class Account(
@@ -10,10 +10,10 @@ class Account(
     var name: String,
     var email: String,
     var phone: String,
-    var status: AccountStatus,
+    var status: AccountStatus = AccountStatus.LOCKED,
     var validFrom: ZonedDateTime,
     var validUntil: ZonedDateTime,
-    val roles: MutableSet<AccountRole>,
+    val roles: MutableSet<AccountRole> = mutableSetOf(),
 ) {
     val isExpired: Boolean
         get() = ZonedDateTime.now().isAfter(validUntil) || ZonedDateTime.now().isBefore(validFrom)

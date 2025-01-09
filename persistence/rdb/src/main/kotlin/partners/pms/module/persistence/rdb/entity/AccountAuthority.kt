@@ -2,8 +2,8 @@
 
 package partners.pms.module.persistence.rdb.entity
 
-import enum.AccountRole
 import jakarta.persistence.*
+import partners.pms.common.partners.pms.common.enum.AccountRole
 
 @Entity
 class AccountAuthority(

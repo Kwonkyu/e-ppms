@@ -1,7 +1,7 @@
 package partners.pms.core.port.inbound.account.model
 
-import enum.AccountRole
-import enum.AccountStatus
+import partners.pms.common.partners.pms.common.enum.AccountRole
+import partners.pms.common.partners.pms.common.enum.AccountStatus
 
 data class AuthorizedAccount(
     val username: String,

@@ -2,8 +2,8 @@
 
 package partners.pms.module.persistence.rdb.entity
 
-import enum.AccountStatus
 import jakarta.persistence.*
+import partners.pms.common.partners.pms.common.enum.AccountStatus
 import java.time.ZonedDateTime
 
 @Entity

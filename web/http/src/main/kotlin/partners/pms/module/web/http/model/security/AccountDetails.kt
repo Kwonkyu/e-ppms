@@ -1,8 +1,8 @@
 package partners.pms.module.web.http.model.security
 
-import enum.AccountStatus
 import org.springframework.security.core.GrantedAuthority
 import org.springframework.security.core.userdetails.UserDetails
+import partners.pms.common.partners.pms.common.enum.AccountStatus
 
 class AccountDetails(
     private val username: String,

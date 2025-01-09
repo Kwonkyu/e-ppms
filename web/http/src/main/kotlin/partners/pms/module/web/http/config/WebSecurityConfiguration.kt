@@ -1,6 +1,5 @@
 package partners.pms.module.web.http.config
 
-import enum.AccountRole
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.http.HttpStatus
@@ -16,6 +15,7 @@ import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.security.web.SecurityFilterChain
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter
 import org.springframework.security.web.authentication.logout.HttpStatusReturningLogoutSuccessHandler
+import partners.pms.common.partners.pms.common.enum.AccountRole
 import partners.pms.core.port.inbound.account.FindAccountPort
 import partners.pms.module.web.http.security.JsonUsernamePasswordAuthenticationFilter
 import partners.pms.module.web.http.security.LoadAccountService
