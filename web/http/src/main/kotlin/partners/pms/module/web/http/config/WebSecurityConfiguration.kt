@@ -17,6 +17,8 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.security.web.authentication.logout.HttpStatusReturningLogoutSuccessHandler
 import partners.pms.common.partners.pms.common.enum.AccountRole
 import partners.pms.core.port.inbound.account.FindAccountPort
+import partners.pms.module.web.http.security.Fake404AccessDeniedHandler
+import partners.pms.module.web.http.security.Fake404AuthorizationDeniedHandler
 import partners.pms.module.web.http.security.JsonUsernamePasswordAuthenticationFilter
 import partners.pms.module.web.http.security.LoadAccountService
 
@@ -40,8 +42,11 @@ class WebSecurityConfiguration {
     ): SecurityFilterChain =
         http
             .csrf { it.disable() }
-            .authorizeHttpRequests {
-                it.requestMatchers("/actuator/**").permitAll()
+            .exceptionHandling {
+                it.accessDeniedHandler(Fake404AccessDeniedHandler())
+                it.authenticationEntryPoint(Fake404AuthorizationDeniedHandler())
+            }.authorizeHttpRequests {
+                it.requestMatchers("/actuator/**", "/account/new").permitAll()
                 it.requestMatchers("/product/**").hasAnyRole(AccountRole.USER.name)
                 it.anyRequest().authenticated()
             }.logout {
