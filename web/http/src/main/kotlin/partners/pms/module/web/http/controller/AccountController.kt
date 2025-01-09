@@ -1,6 +1,7 @@
 package partners.pms.module.web.http.controller
 
 import org.springframework.http.ResponseEntity
+import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
@@ -14,6 +15,7 @@ import java.net.URI
 @RequestMapping("/account")
 class AccountController(
     private val createAccountPort: CreateAccountPort,
+    private val passwordEncoder: PasswordEncoder,
 ) {
     @PostMapping("/new")
     fun createNewAccount(
@@ -22,7 +24,7 @@ class AccountController(
         createAccountPort.createAccount(
             AccountCreateRequest(
                 username = request.username,
-                password = request.password,
+                password = passwordEncoder.encode(request.password),
                 name = request.name,
                 email = request.email,
                 phone = request.phone,
