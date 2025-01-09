@@ -7,8 +7,8 @@ import partners.pms.core.port.inbound.account.FindAccountPort as FindAccountEndp
 import partners.pms.core.port.outbound.account.FindAccountPort as FindAccountPersistencePort
 
 @Service
-@Transactional
-class AccountService(
+@Transactional(readOnly = true)
+class AccountQueryService(
     private val findAccountPort: FindAccountPersistencePort,
 ) : FindAccountEndpointPort {
     override fun isAccountExists(accountId: String): Boolean = findAccountPort.findAccountDetail(accountId) != null

@@ -26,6 +26,6 @@ class Account(
     var validFrom: ZonedDateTime,
     @Column(name = "valid_until")
     var validUntil: ZonedDateTime,
-    @OneToMany(mappedBy = "id.account", orphanRemoval = true, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "id.account", orphanRemoval = true, fetch = FetchType.LAZY, cascade = [CascadeType.ALL])
     var authorities: MutableSet<AccountAuthority>,
 ) : Auditable()
