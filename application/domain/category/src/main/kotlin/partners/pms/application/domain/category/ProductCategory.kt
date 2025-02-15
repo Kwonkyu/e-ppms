@@ -5,19 +5,16 @@ class ProductCategory(
     code: String,
     name: String,
     description: String = "",
-    parent: ProductCategory? = null,
-    children: MutableSet<ProductCategory>? = null,
-    level: Int,
     active: Boolean = false,
+    override var parent: ProductCategory? = null,
+    var children: MutableSet<ProductCategory>? = null,
     sort: Int = 0,
     var mappedProducts: MutableSet<MappedProduct>? = null,
-) : CommonCategory<ProductCategory>(
+) : CommonCategory(
         id = id,
         code = code,
         name = name,
         description = description,
-        parent = parent,
-        level = level,
         active = active,
         sort = sort,
     )

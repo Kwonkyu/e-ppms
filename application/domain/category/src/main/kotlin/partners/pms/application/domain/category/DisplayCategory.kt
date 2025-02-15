@@ -5,19 +5,16 @@ class DisplayCategory(
     code: String,
     name: String,
     description: String = "",
-    parent: DisplayCategory? = null,
-    children: MutableSet<DisplayCategory>? = null,
-    level: Int,
     active: Boolean = false,
-    sort: Int,
+    override var parent: DisplayCategory? = null,
+    var children: MutableSet<DisplayCategory>? = null,
+    sort: Int = 0,
     var mappedProducts: MutableSet<MappedProduct>? = null,
-) : CommonCategory<DisplayCategory>(
+) : CommonCategory(
         id = id,
         code = code,
         name = name,
         description = description,
-        parent = parent,
-        level = level,
         active = active,
         sort = sort,
     )
